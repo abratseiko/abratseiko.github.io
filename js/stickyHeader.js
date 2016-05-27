@@ -51,9 +51,13 @@
 
 	(function iPhoneResize(){
 		var browserSpace = document.documentElement.clientHeight - window.innerHeight;
+		var num = document.getElementById('log');
+		var num2 = document.getElementById('log2');
 		if ( browserSpace > 0){
 			document.body.style.marginTop = -browserSpace + 'px';
 		}
+		num.innerHTML = document.documentElement.clientHeight;
+		num2.innerHTML = window.innerHeight;
 	})();
 
 	var headers = document.querySelectorAll('.header-container');
