@@ -3,7 +3,7 @@
 	function stickyHeader(elem){
 
 		var newStyles = {
-			position: 'fixed',
+			position: 'sticky',
 			top: '0px',
 			width: (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px'
 		};
