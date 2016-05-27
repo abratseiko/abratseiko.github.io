@@ -27,6 +27,7 @@
 		function ScrollingPage(event){
 			var currentItem = getCurrentElemPosition(elem);
 			if(currentItem.top <= 0){
+				toggleFullScreen();
 				setNewStyles();
 			} else {
 				setStartStyles();
@@ -46,6 +47,21 @@
 				right: currentPosition.right,
 				bottom: currentPosition.bottom
 			};
+		}
+
+		function toggleFullScreen() {
+		  var doc = window.document;
+		  var docEl = doc.documentElement;
+
+		  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen;
+		  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen;
+
+		  if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement) { 
+		    requestFullScreen.call(docEl);
+		  }
+		  else {
+		    cancelFullScreen.call(doc);  
+		  }
 		}
 	}
 
