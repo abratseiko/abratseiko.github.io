@@ -49,9 +49,19 @@
 		}
 	}
 
+	(function iPhoneResize(){
+		var browserSpace = document.documentElement.clientHeight - window.innerHeight;
+		if ( browserSpace > 0){
+			document.body.style.marginTop = -browserSpace + 'px';
+		}
+	})();
+
 	var headers = document.querySelectorAll('.header-container');
 	Array.prototype.forEach.call(headers, function(header) {
 		stickyHeader(header);
 	});
+
+	console.log(document.documentElement.clientHeight);
+	console.log(window.innerHeight);
 
 })();
