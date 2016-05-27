@@ -6,14 +6,28 @@
 	box-sizing: border-box;
 }
 
+html{
+	height: 100%;
+}
+
 body{
-	height: 2500px;
+	position: relative;
+	height: 100%;
+}
+
+.body-container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .wrapper{
 	width: 80%;
 	margin: 0 auto;
 	height: 100%;
+	height: 2500px;
 }
 
 .header-container{

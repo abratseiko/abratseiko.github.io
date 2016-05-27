@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 	<meta name="mobile-web-app-capable" content="yes">
 	<title>Sticky header</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="wrapper">
-		<div class="empty-space"></div>
-		<div class="header-container">
-			<div class="header"></div>
+	<div class="body-container">
+		<div class="wrapper">
+			<div class="empty-space"></div>
+			<div class="header-container">
+				<div class="header"></div>
+			</div>
+			<div class="empty-space"></div>
+			<div class="header-container" style="height: 50px">
+				<div class="header" style="background: #FFD700"></div>
+			</div>
+			<div class="empty-space"></div>
+			<div class="header-container" style="height: 60px">
+				<div class="header" style="background: #008B00"></div>
+			</div>
 		</div>
-		<div class="empty-space"></div>
-		<div class="header-container" style="height: 50px">
-			<div class="header" style="background: #FFD700"></div>
-		</div>
-		<div class="empty-space"></div>
-		<div class="header-container" style="height: 60px">
-			<div class="header" style="background: #008B00"></div>
-		</div>
-		<p>Client: <span id="log"></span></p>
-		<p>Inner: <span id="log2"></span></p>
 	</div>
 	<script src="js/stickyHeader.js"></script>
 </body>
