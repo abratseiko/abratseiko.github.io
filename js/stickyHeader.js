@@ -60,7 +60,7 @@
 		num2.innerHTML = window.innerHeight;
 	};
 
-	window.addEventListener("scroll", iPhoneResize);
+	window.addEventListener("resize", iPhoneResize);
 
 	var headers = document.querySelectorAll('.header-container');
 	Array.prototype.forEach.call(headers, function(header) {
