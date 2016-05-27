@@ -6,9 +6,14 @@
 	box-sizing: border-box;
 }
 
+html {
+    overflow: hidden;
+}
+
 body{
 	height: 2500px;
-	scroll-behavior: smooth;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
 }
 
 .wrapper{
