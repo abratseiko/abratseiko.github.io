@@ -49,7 +49,7 @@
 		}
 	}
 
-	(function iPhoneResize(){
+	function iPhoneResize(){
 		var browserSpace = document.documentElement.clientHeight - window.innerHeight;
 		var num = document.getElementById('log');
 		var num2 = document.getElementById('log2');
@@ -58,7 +58,9 @@
 		}
 		num.innerHTML = document.documentElement.clientHeight;
 		num2.innerHTML = window.innerHeight;
-	})();
+	};
+
+	window.addEventListener("scroll", iPhoneResize);
 
 	var headers = document.querySelectorAll('.header-container');
 	Array.prototype.forEach.call(headers, function(header) {
