@@ -3,7 +3,7 @@
 	function stickyHeader(elem){
 
 		var newStyles = {
-			position: 'sticky',
+			position: 'fixed',
 			top: '0px',
 			width: (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px'
 		};
@@ -24,7 +24,7 @@
 
 		window.addEventListener("resize", ResizePosition);
 		
-		function ScrollingPage(){
+		function ScrollingPage(event){
 			var currentItem = getCurrentElemPosition(elem);
 			if(currentItem.top <= 0){
 				setNewStyles();
@@ -33,7 +33,7 @@
 			}
 		}
 
-		function ResizePosition(){
+		function ResizePosition(event){
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
         }
 
