@@ -13,12 +13,14 @@ body{
 .wrapper{
 	width: 80%;
 	margin: 0 auto;
+	height: 100%;
 }
 
 .header-container{
 	width: 100%;
-	position: relative;
 	height: 40px;
+	position: sticky;
+	top: 0;
 }
 
 .header{
