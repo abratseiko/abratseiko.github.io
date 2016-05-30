@@ -16,7 +16,7 @@
 			position: 'absolute',
 			top: '0px',
 			width: '100%'
-		}
+		};
 
 		var setNewStyles = function(object){
 			for (var key in object) {
@@ -36,6 +36,9 @@
 		
 		function ScrollingPage(event){
 			var currentItem = getCurrentElemPosition(elem);
+			if (differentOfHeight !== 0){
+            	newStyles.top = differentOfHeight + 'px';
+            }
 
 			if( differentOfWidth < 0 ){
 				if( currentItem.top <= container.offsetTop ){
@@ -57,24 +60,7 @@
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
-            if (differentOfHeight != 0){
-            	newStyles.top = differentOfHeight + 'px';
-            }
-
-            	num.innerHTML = document.documentElement.clientHeight;
-				num2.innerHTML = window.innerHeight;
         }
-    	
-    	function setTransformStyle (element, elTransformArg) {
-		    // var transfromString = ("translateY(" + elTransformArg + "px)");
-
-		    // element.style.webkitTransform = transfromString;
-		    // element.style.MozTransform = transfromString;
-		    // element.style.msTransform = transfromString;
-		    // element.style.OTransform = transfromString;
-		    // element.style.transform = transfromString;
-		    element.style.top = elTransformArg + 'px';
-		}
 
 		function getCurrentElemPosition(block){
 			var currentPosition = block.getBoundingClientRect();
