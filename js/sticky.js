@@ -58,12 +58,12 @@
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
             if (differentOfHeight != 0){
-            	document.body.style.marginTop = differentOfHeight + 'px';
+            	document.body.style.transform = translateY(differentOfHeight + 'px');
             }
 
             	num.innerHTML = document.documentElement.clientHeight;
 				num2.innerHTML = window.innerHeight;
-				num3.innerHTML = differentOfHeight;
+				num3.innerHTML = document.body.style.transform;
         }
 
 		function getCurrentElemPosition(block){
