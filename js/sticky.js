@@ -58,13 +58,22 @@
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
             if (differentOfHeight != 0){
-            	document.body.style.transform = translateY(differentOfHeight + 'px');
+            	setTransform( document.body, differentOfHeight);
             }
 
             	num.innerHTML = document.documentElement.clientHeight;
 				num2.innerHTML = window.innerHeight;
-				num3.innerHTML = document.body.style.transform;
         }
+    	
+    	function setTransform (element, elTransformArg) {
+		    var transfromString = ("translateY(" + elTransformArg.rot + "px )");
+
+		    element.style.webkitTransform = transfromString;
+		    element.style.MozTransform = transfromString;
+		    element.style.msTransform = transfromString;
+		    element.style.OTransform = transfromString;
+		    element.style.transform = transfromString;
+		}
 
 		function getCurrentElemPosition(block){
 			var currentPosition = block.getBoundingClientRect();
