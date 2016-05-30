@@ -2,6 +2,8 @@
 
 	function stickyHeader(elem){
 
+		var container = document.getElementById("body-container");
+
 		var newStyles = {
 			position: 'fixed',
 			top: '0px',
@@ -26,7 +28,7 @@
 		
 		function ScrollingPage(event){
 			var currentItem = getCurrentElemPosition(elem);
-			if(currentItem.top <= 0){
+			if(currentItem.top <= container.offsetTop){
 				setNewStyles();
 			} else {
 				setStartStyles();
