@@ -58,21 +58,22 @@
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
             if (differentOfHeight != 0){
-            	setTransform( container, differentOfHeight);
+            	setTransformStyle( document.body, differentOfHeight);
             }
 
             	num.innerHTML = document.documentElement.clientHeight;
 				num2.innerHTML = window.innerHeight;
         }
     	
-    	function setTransform (element, elTransformArg) {
-		    var transfromString = ("translateY(" + elTransformArg + "px)");
+    	function setTransformStyle (element, elTransformArg) {
+		    // var transfromString = ("translateY(" + elTransformArg + "px)");
 
-		    element.style.webkitTransform = transfromString;
-		    element.style.MozTransform = transfromString;
-		    element.style.msTransform = transfromString;
-		    element.style.OTransform = transfromString;
-		    element.style.transform = transfromString;
+		    // element.style.webkitTransform = transfromString;
+		    // element.style.MozTransform = transfromString;
+		    // element.style.msTransform = transfromString;
+		    // element.style.OTransform = transfromString;
+		    // element.style.transform = transfromString;
+		    element.style.marginTop = elTransformArg + 'px';
 		}
 
 		function getCurrentElemPosition(block){
