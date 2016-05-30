@@ -58,7 +58,8 @@
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
             if (differentOfHeight != 0){
-            	setTransformStyle( document.body, differentOfHeight);
+            	// setTransformStyle( document.body, differentOfHeight);
+            	window.innerHeight = document.documentElement.clientHeight;
             }
 
             	num.innerHTML = document.documentElement.clientHeight;
