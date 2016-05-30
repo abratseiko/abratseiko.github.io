@@ -40,15 +40,30 @@
             	newStyles.top = differentOfHeight + 'px';
             }
 	
-			if( currentItem.top <= container.offsetTop ){
-				if( differentOfWidth < 0 ){
+			// if( currentItem.top <= container.offsetTop ){
+			// 	if( differentOfWidth < 0 ){
+			// 		setNewStyles(newStylesScale);
+			// 		elem.style.position = "static";
+			// 	} else{
+			// 		setNewStyles(newStyles);
+			// 	}
+			// } else {
+			// 	setStartStyles();
+			// }
+
+			if( differentOfWidth < 0 ){
+				if( currentItem.bottom <= container.offsetTop ){
 					setNewStyles(newStylesScale);
 					elem.style.position = "static";
-				} else{
-					setNewStyles(newStyles);
+				} else {
+					setStartStyles();
 				}
 			} else {
-				setStartStyles();
+				if( currentItem.top <= container.offsetTop ){
+					setNewStyles(newStyles);
+				} else {
+					setStartStyles();
+				}
 			}
 		}
 
