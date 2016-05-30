@@ -36,24 +36,19 @@
 		
 		function ScrollingPage(event){
 			var currentItem = getCurrentElemPosition(elem);
-			if (differentOfHeight !== 0){
+			if (differentOfHeight < 0){
             	newStyles.top = differentOfHeight + 'px';
             }
-
-			if( differentOfWidth < 0 ){
-				if( currentItem.top <= container.offsetTop ){
+	
+			if( currentItem.top <= container.offsetTop ){
+				if( differentOfWidth < 0 ){
 					setNewStyles(newStylesScale);
-				} else {
-					setStartStyles();
+				} else{
+					setNewStyles(newStyles);
 				}
 			} else {
-				if( currentItem.top <= container.offsetTop ){
-					setNewStyles(newStyles);
-				} else {
-					setStartStyles();
-				}
+				setStartStyles();
 			}
-
 		}
 
 		function ResizePosition(event){
@@ -74,25 +69,10 @@
 		}
 	}
 
-	// function iPhoneResize(){
-	// 	var browserSpace = document.documentElement.clientHeight - window.innerHeight;
-	// 	var num = document.getElementById('log');
-	// 	var num2 = document.getElementById('log2');
-	// 	if ( browserSpace > 0){
-	// 		document.body.style.marginTop = -browserSpace + 'px';
-	// 	}
-	// 	num.innerHTML = document.documentElement.clientHeight;
-	// 	num2.innerHTML = window.innerHeight;
-	// };
-
-	// window.addEventListener("resize", iPhoneResize);
-
 	var headers = document.querySelectorAll('.header-container');
 	Array.prototype.forEach.call(headers, function(header) {
 		stickyHeader(header);
 	});
 
-	// console.log(document.documentElement.clientHeight);
-	// console.log(window.innerHeight);
 
 })();
