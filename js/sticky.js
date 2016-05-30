@@ -55,6 +55,9 @@
 		function ResizePosition(event){
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
+            if (differentOfWidth != 0){
+            	document.body.marginTop = -differentOfWidth + 'px';
+            }
         }
 
 		function getCurrentElemPosition(block){
