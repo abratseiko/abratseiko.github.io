@@ -58,8 +58,7 @@
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
             if (differentOfHeight != 0){
-            	// setTransformStyle( document.body, differentOfHeight);
-            	window.innerHeight = document.documentElement.clientHeight;
+            	setTransformStyle( container, differentOfHeight);
             }
 
             	num.innerHTML = document.documentElement.clientHeight;
@@ -74,7 +73,7 @@
 		    // element.style.msTransform = transfromString;
 		    // element.style.OTransform = transfromString;
 		    // element.style.transform = transfromString;
-		    element.style.marginTop = elTransformArg + 'px';
+		    element.style.top = elTransformArg + 'px';
 		}
 
 		function getCurrentElemPosition(block){
