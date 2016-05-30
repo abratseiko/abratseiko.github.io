@@ -58,10 +58,10 @@
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
             if (differentOfHeight < 0){
-            	document.body.marginTop = differentOfHeight + 'px';
+            	document.body.style.marginTop = differentOfHeight + 'px';
             }
 
-            console.log(document.body.marginTop)
+            console.log(document.body.style.marginTop)
         }
 
 		function getCurrentElemPosition(block){
