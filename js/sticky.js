@@ -4,6 +4,7 @@
 
 		var container = document.getElementById("body-container");
 		var differentOfWidth;
+		var differentOfHeight;
 
 		var newStyles = {
 			position: 'fixed',
@@ -55,9 +56,12 @@
 		function ResizePosition(event){
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
-            if (differentOfWidth != 0){
-            	document.body.marginTop = -differentOfWidth + 'px';
+            differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
+            if (differentOfHeight < 0){
+            	document.body.marginTop = differentOfHeight + 'px';
             }
+
+            console.log(document.body.marginTop)
         }
 
 		function getCurrentElemPosition(block){
