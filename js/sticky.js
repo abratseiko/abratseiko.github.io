@@ -3,6 +3,7 @@
 	function stickyHeader(elem){
 
 		var container = document.getElementById("body-container");
+		var differentOfWidth;
 
 		var newStyles = {
 			position: 'fixed',
@@ -10,9 +11,15 @@
 			width: (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px'
 		};
 
-		var setNewStyles = function(){
-			for (var key in newStyles) {
-		 	  	elem.childNodes[1].style[key] = newStyles[key];
+		var newStylesScale = {
+			position: 'absolute',
+			top: '0px',
+			width: '100%'
+		}
+
+		var setNewStyles = function(object){
+			for (var key in object) {
+		 	  	elem.childNodes[1].style[key] = object[key];
 		 	}	
 		};
 
@@ -28,15 +35,26 @@
 		
 		function ScrollingPage(event){
 			var currentItem = getCurrentElemPosition(elem);
-			if(currentItem.top <= container.offsetTop){
-				setNewStyles();
+
+			if( differentOfWidth < 0 ){
+				if( currentItem.top <= container.offsetTop ){
+					setNewStyles(newStylesScale);
+				} else {
+					setStartStyles();
+				}
 			} else {
-				setStartStyles();
+				if( currentItem.top <= container.offsetTop ){
+					setNewStyles(newStyles);
+				} else {
+					setStartStyles();
+				}
 			}
+
 		}
 
 		function ResizePosition(event){
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
+            differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
         }
 
 		function getCurrentElemPosition(block){
@@ -68,8 +86,6 @@
 	Array.prototype.forEach.call(headers, function(header) {
 		stickyHeader(header);
 	});
-
-	console.log(headers);
 
 	// console.log(document.documentElement.clientHeight);
 	// console.log(window.innerHeight);
