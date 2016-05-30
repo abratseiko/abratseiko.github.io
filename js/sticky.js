@@ -66,7 +66,7 @@
         }
     	
     	function setTransform (element, elTransformArg) {
-		    var transfromString = ("translateY(" + elTransformArg.rot + "px )");
+		    var transfromString = ("translateY(" + elTransformArg + "px)");
 
 		    element.style.webkitTransform = transfromString;
 		    element.style.MozTransform = transfromString;
