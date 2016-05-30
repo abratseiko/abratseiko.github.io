@@ -57,11 +57,13 @@
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
             differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
             differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
-            if (differentOfHeight < 0){
+            if (differentOfHeight != 0){
             	document.body.style.marginTop = differentOfHeight + 'px';
             }
 
-            console.log(document.body.style.marginTop)
+            	num.innerHTML = document.documentElement.clientHeight;
+				num2.innerHTML = window.innerHeight;
+				num3.innerHTML = differentOfHeight;
         }
 
 		function getCurrentElemPosition(block){
