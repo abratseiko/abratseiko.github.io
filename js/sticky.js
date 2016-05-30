@@ -43,6 +43,7 @@
 			if( currentItem.top <= container.offsetTop ){
 				if( differentOfWidth < 0 ){
 					setNewStyles(newStylesScale);
+					elem.stylr.position = "static";
 				} else{
 					setNewStyles(newStyles);
 				}
