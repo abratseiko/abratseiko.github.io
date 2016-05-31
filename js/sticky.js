@@ -6,6 +6,10 @@
 		var differentOfWidth;
 		var differentOfHeight;
 
+		var header1 = document.getElementById('h1');
+		var header2 = document.getElementById('h2');
+		var header3 = document.getElementById('h3');
+
 		var newStyles = {
 			position: 'fixed',
 			top: '0px',
@@ -39,9 +43,10 @@
 			differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
 			differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
 			
-			document.getElementById('num').innerHTML = differentOfWidth;
-			document.getElementById('num1').innerHTML = differentOfHeight;
-			
+			document.getElementById('num').innerHTML = header1.style.position;
+			document.getElementById('num1').innerHTML = header2.style.position;
+			document.getElementById('num2').innerHTML = header3.style.position;
+
 			var currentItem = getCurrentElemPosition(elem);
 
 			if (differentOfHeight < 0 && differentOfWidth == 0){
@@ -57,10 +62,10 @@
 					setStartStyles();
 				}
 			} else {
-				if( currentItem.top > container.offsetTop ){
-					setStartStyles();
-				} else {
+				if( currentItem.top <= container.offsetTop ){
 					setNewStyles(newStyles);
+				} else {
+					setStartStyles();
 				}
 			}
 		}
