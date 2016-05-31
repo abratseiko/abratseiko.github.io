@@ -55,16 +55,16 @@
             }
 	
 			if( differentOfWidth > 0 ){
+				elem.style.position = "static";
 				if( currentItem.bottom <= container.offsetTop ){
 					setNewStyles(newStylesScale);
-					elem.style.position = "static";
 				} else {
 					setStartStyles();
 				}
 			} else {
-				setStartStyles();
+				elem.style.position = "sticky";
+				// setStartStyles();
 				if( currentItem.top <= container.offsetTop ){
-					elem.style.position = "sticky";
 					setNewStyles(newStyles);
 				} else {
 					setStartStyles();
