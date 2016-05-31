@@ -30,23 +30,27 @@
 		 	elem.childNodes[1].style.width = '100%';
 		};
 
-		window.addEventListener("scroll", ScrollingPage);
-
 		window.addEventListener("resize", ResizePosition);
 		
+		window.addEventListener("scroll", ScrollingPage);
+		
 		function ScrollingPage(event){
-
-			num.innerHTML = document.documentElement.clientWidth;
-			num1.innerHTML = window.innerWidth;
+			
+			differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
+			differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
+			
+			document.getElementById('num').innerHTML = differentOfWidth;
+			document.getElementById('num1').innerHTML = differentOfHeight;
+			
 			var currentItem = getCurrentElemPosition(elem);
-			if (differentOfHeight < 0){
+			if (differentOfHeight < 0 && differentOfWidth == 0){
             	newStyles.top = differentOfHeight + 'px';
             }
 	
 			if( differentOfWidth > 0 ){
-				if( currentItem.bottom < container.offsetTop ){
+				if( currentItem.bottom <= container.offsetTop ){
 					setNewStyles(newStylesScale);
-					elem.style.position = "static";
+					// elem.style.position = "static";
 				} else {
 					setStartStyles();
 				}
@@ -57,23 +61,12 @@
 					setStartStyles();
 				}
 			}
-			// if( currentItem.top <= container.offsetTop ){
-			// 	if( differentOfWidth < 0 ){
-			// 		setNewStyles(newStylesScale);
-			// 		elem.style.position = "static";
-			// 	} else{
-			// 		setNewStyles(newStyles);
-			// 	}
-			// } else {
-			// 	setStartStyles();
-			// }
-
 		}
 
 		function ResizePosition(event){
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
-            differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
-            differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
+            // differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
+            // differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
         }
 
 		function getCurrentElemPosition(block){
