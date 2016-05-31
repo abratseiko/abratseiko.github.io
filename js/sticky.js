@@ -44,7 +44,7 @@
             }
 	
 			if( differentOfWidth > 0 ){
-				if( currentItem.bottom <= 0 ){
+				if( currentItem.top < 0 ){
 					setNewStyles(newStylesScale);
 					elem.style.position = "static";
 				} else {
