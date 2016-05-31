@@ -6,9 +6,9 @@
 		var differentOfWidth;
 		var differentOfHeight;
 
-		var header1 = document.getElementById('h1');
-		var header2 = document.getElementById('h2');
-		var header3 = document.getElementById('h3');
+		// var header1 = document.getElementById('h1');
+		// var header2 = document.getElementById('h2');
+		// var header3 = document.getElementById('h3');
 
 		var newStyles = {
 			position: 'fixed',
@@ -43,9 +43,9 @@
 			differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
 			differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
 			
-			document.getElementById('num').innerHTML = header1.style.position;
-			document.getElementById('num1').innerHTML = header2.style.position;
-			document.getElementById('num2').innerHTML = header3.style.position;
+			// document.getElementById('num').innerHTML = header1.style.position;
+			// document.getElementById('num1').innerHTML = header2.style.position;
+			// document.getElementById('num2').innerHTML = header3.style.position;
 
 			var currentItem = getCurrentElemPosition(elem);
 
