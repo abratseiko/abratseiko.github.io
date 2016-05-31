@@ -57,10 +57,10 @@
 					setStartStyles();
 				}
 			} else {
-				if( currentItem.top <= container.offsetTop ){
-					setNewStyles(newStyles);
-				} else {
+				if( currentItem.top > container.offsetTop ){
 					setStartStyles();
+				} else {
+					setNewStyles(newStyles);
 				}
 			}
 		}
