@@ -62,10 +62,8 @@
 					setStartStyles();
 				}
 			} else {
-				elem.style.position = "sticky";
-				setStartStyles();
-
 				if( currentItem.top <= container.offsetTop ){
+					elem.style.position = "sticky";
 					setNewStyles(newStyles);
 				} else {
 					setStartStyles();
