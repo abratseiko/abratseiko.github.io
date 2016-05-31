@@ -44,14 +44,14 @@
             }
 	
 			if( differentOfWidth > 0 ){
-				if( currentItem.bottom < 0 ){
+				if( currentItem.bottom < container.offsetTop ){
 					setNewStyles(newStylesScale);
-					// elem.style.position = "static";
+					elem.style.position = "static";
 				} else {
 					setStartStyles();
 				}
 			} else {
-				if( currentItem.top <= 0){
+				if( currentItem.top <= container.offsetTop ){
 					setNewStyles(newStyles);
 				} else {
 					setStartStyles();
