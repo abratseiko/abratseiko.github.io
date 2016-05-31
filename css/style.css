@@ -23,7 +23,7 @@ body{
 .wrapper{
 	width: 80%;
 	margin: 0 auto;
-	/*height: 2500px;*/
+	height: inherit;
 	position: relative;
 }
 
