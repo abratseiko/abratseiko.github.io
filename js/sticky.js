@@ -62,7 +62,7 @@
 					setStartStyles();
 				}
 			} else {
-				setStartStyles();
+				// setStartStyles();
 				
 				if( currentItem.top <= container.offsetTop ){
 					setNewStyles(newStyles);
