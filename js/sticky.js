@@ -43,30 +43,30 @@
             	newStyles.top = differentOfHeight + 'px';
             }
 	
-			// if( differentOfWidth > 0 ){
-			// 	if( currentItem.bottom < 0 ){
-			// 		setNewStyles(newStylesScale);
-			// 		elem.style.position = "static";
-			// 	} else {
-			// 		setStartStyles();
-			// 	}
-			// } else {
-			// 	if( currentItem.top <= container.offsetTop ){
-			// 		setNewStyles(newStyles);
-			// 	} else {
-			// 		setStartStyles();
-			// 	}
-			// }
-			if( currentItem.top <= container.offsetTop ){
-				if( differentOfWidth > 0 ){
+			if( differentOfWidth > 0 ){
+				if( currentItem.bottom < 0 ){
 					setNewStyles(newStylesScale);
-					elem.style.position = "static";
-				} else{
-					setNewStyles(newStyles);
+					// elem.style.position = "static";
+				} else {
+					setStartStyles();
 				}
 			} else {
-				setStartStyles();
+				if( currentItem.top <= container.offsetTop ){
+					setNewStyles(newStyles);
+				} else {
+					setStartStyles();
+				}
 			}
+			// if( currentItem.top <= container.offsetTop ){
+			// 	if( differentOfWidth < 0 ){
+			// 		setNewStyles(newStylesScale);
+			// 		elem.style.position = "static";
+			// 	} else{
+			// 		setNewStyles(newStyles);
+			// 	}
+			// } else {
+			// 	setStartStyles();
+			// }
 
 		}
 
