@@ -49,10 +49,10 @@
 
 			var currentItem = getCurrentElemPosition(elem);
 
-			if (differentOfHeight < 0 && differentOfWidth == 0){
-            	newStyles.top = differentOfHeight + 'px';
-            	// container.style.top = differentOfHeight + 'px';
-            }
+			// if (differentOfHeight < 0 && differentOfWidth == 0){
+   //          	newStyles.top = differentOfHeight + 'px';
+   //          	// container.style.top = differentOfHeight + 'px';
+   //          }
 	
 			if( differentOfWidth > 0 ){
 				if( currentItem.bottom <= container.offsetTop ){
@@ -63,7 +63,7 @@
 				}
 			} else {
 				if( currentItem.top <= container.offsetTop ){
-					elem.style.position = "sticky";
+					// elem.style.position = "sticky";
 					setNewStyles(newStyles);
 				} else {
 					setStartStyles();
