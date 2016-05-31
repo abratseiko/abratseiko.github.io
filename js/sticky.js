@@ -46,7 +46,7 @@
 
 			if (differentOfHeight < 0 && differentOfWidth == 0){
             	newStyles.top = differentOfHeight + 'px';
-            	container.style.top = differentOfHeight + 'px';
+            	// container.style.top = differentOfHeight + 'px';
             }
 	
 			if( differentOfWidth > 0 ){
