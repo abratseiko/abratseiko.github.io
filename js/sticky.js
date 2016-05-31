@@ -43,14 +43,16 @@
 			document.getElementById('num1').innerHTML = differentOfHeight;
 			
 			var currentItem = getCurrentElemPosition(elem);
+
 			if (differentOfHeight < 0 && differentOfWidth == 0){
             	newStyles.top = differentOfHeight + 'px';
+            	container.style.top = differentOfHeight + 'px';
             }
 	
 			if( differentOfWidth > 0 ){
 				if( currentItem.bottom <= container.offsetTop ){
 					setNewStyles(newStylesScale);
-					// elem.style.position = "static";
+					elem.style.position = "static";
 				} else {
 					setStartStyles();
 				}
@@ -65,8 +67,6 @@
 
 		function ResizePosition(event){
             newStyles.width = (getCurrentElemPosition(elem).right - getCurrentElemPosition(elem).left) + 'px';
-            // differentOfWidth = document.documentElement.clientWidth - window.innerWidth;
-            // differentOfHeight = window.innerHeight - document.documentElement.clientHeight;
         }
 
 		function getCurrentElemPosition(block){
