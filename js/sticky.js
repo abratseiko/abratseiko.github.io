@@ -36,8 +36,8 @@
 		
 		function ScrollingPage(event){
 
-			num.innerHTML = document.documentElement.clientHeight;
-			num1.innerHTML = window.innerHeight;
+			num.innerHTML = document.documentElement.clientWidth;
+			num1.innerHTML = window.innerWidth;
 			var currentItem = getCurrentElemPosition(elem);
 			if (differentOfHeight < 0){
             	newStyles.top = differentOfHeight + 'px';
